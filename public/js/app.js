@@ -3254,7 +3254,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     groupedMovies: function groupedMovies() {
-      return _chunk(this.favs, 3);
+      return _.chunk(this.favs, 3);
     }
   },
   methods: {
@@ -56703,8 +56703,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //import AdminDashboard from './components/admin/Dashboard'
-// Routes
+ // Routes
 
 var routes = [{
   path: '/',

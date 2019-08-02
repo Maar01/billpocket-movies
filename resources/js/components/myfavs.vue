@@ -25,7 +25,7 @@
         },
         computed:{
             groupedMovies() {
-                return _chunk(this.favs, 3);
+                return _.chunk(this.favs, 3);
             }
         },
         methods: {

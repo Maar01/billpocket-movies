@@ -39,6 +39,8 @@ class FavouriteController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user()->favourites[0]->movie;
+        dd($user);
         $movieData = $request->all();
 
         $movie = Movie::updateOrCreate(

@@ -6,7 +6,6 @@ import Register from './components/Register'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
 import myfavs from './components/myfavs'
-//import AdminDashboard from './components/admin/Dashboard'
 // Routes
 const routes = [
     {
