@@ -7,7 +7,7 @@
                     <h4 class="card-title">{{movie.title}}</h4>
                     <p class="card-text ">{{movie.overview}}</p>
                     <a href="#" class="btn btn-primary">View details</a>
-                    <a href="#" class="btn btn-warning">add to favourites</a>
+                    <a href="#" @click="addToFavs(movie)" class="btn btn-warning">add to favourites</a>
                 </div>
             </div>
         </div>
@@ -33,14 +33,15 @@
         methods: {
             getPageMovies(page) {
                 page = page || 1;
-                axios.get(`auth/movies/${page}`).then((response) => {
-                    console.log(response);
+                axios.get(`auth/allMovies/${page}`).then((response) => {
                     this.movies = response.data.results;
                     this.pageNumber = response.data.page;
                 });
             },
-            addToFavs() {
-                axios.post('addFav').then();
+            addToFavs(movie) {
+                axios.post('auth/favs', movie ).then( (response) => {
+                    console.log(response.data);
+                });
             }
         }
     }

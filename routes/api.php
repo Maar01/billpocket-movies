@@ -23,7 +23,7 @@ Route::prefix('v1')->group(function() {
         Route::middleware('auth:api')->group( function () {
             Route::get('user', 'AuthController@currentUser');
             Route::post('logout', 'AuthController@logout');
-            Route::get('movies/{page?}', function ($page = 1) {
+            Route::get('allMovies/{page?}', function ($page = 1) {
                 $popularClient = new \App\Http\Clients\PopularRequest();
                 if ($popularClient->isSucessfull()) {
                     $response = $popularClient->getResponse(true);
@@ -33,6 +33,8 @@ Route::prefix('v1')->group(function() {
 
                 return $response;
             });
+            Route::resource('movies', 'MovieController');
+            Route::resource('favs', 'FavouriteController');
         });
     });
 

@@ -5,14 +5,14 @@
                 <div class="card card-default">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        <div class="alert alert-danger" @click="funcion" v-if="has_error && !success">
+                        <div class="alert alert-danger" v-if="has_error && !success">
                             <p v-if="error == 'login_error'">Validation Errors.</p>
                             <p v-else>Error, unable to connect with these credentials.</p>
                         </div>
                         <form autocomplete="off" @submit.prevent="login" method="post">
                             <div class="form-group">
-                                <label for="email">item.E-mail</label>
-                                <input type="email" id="email" class="form-control" :placeholder="variable" v-model="email" required>
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" class="form-control" placeholder="" v-model="email" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>

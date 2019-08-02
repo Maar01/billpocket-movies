@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Register from './components/Register'
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
+import myfavs from './components/myfavs'
 //import AdminDashboard from './components/admin/Dashboard'
 // Routes
 const routes = [
@@ -13,7 +14,7 @@ const routes = [
         name: 'home',
         component: Home,
         meta: {
-            auth: undefined
+            auth: false
         }
     },
     {
@@ -41,6 +42,23 @@ const routes = [
             auth: true
         }
     },
+    {
+        path: '/my-favs',
+        name: 'myfavs',
+        component: myfavs,
+        meta: {
+            auth: true
+        }
+    },
+    /*{
+        path: '/detail',
+        name: 'detail',
+        component: 'detail',
+        meta: {
+            auth: true
+        }
+    }*/
+
 ];
 const router = new VueRouter({
     history: true,

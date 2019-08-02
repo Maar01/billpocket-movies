@@ -22,7 +22,14 @@
             </ul>
             <ul class="navbar-nav ml-auto" v-if="$auth.check()">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" @click.prevent="$auth.logout()">Logout</a>
+                    <a class="nav-link" href="#" >
+                        My favs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" @click.prevent="$auth.logout()">
+                        Logout
+                    </a>
                 </li>
             </ul>
         </div>
@@ -40,7 +47,8 @@
                     ],
                     // LOGGED USER
                     user: [
-                        { name: 'Dashboard', path: 'dashboard' }
+                        { name: 'Dashboard', path: 'dashboard' },
+                        { name: 'MyFavs', path: 'userFavs' }
                     ],
                     // LOGGED ADMIN
                     admin: [
