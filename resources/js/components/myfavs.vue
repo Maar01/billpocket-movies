@@ -25,8 +25,17 @@
         },
         computed:{
             groupedMovies() {
-                return _chunk(this.movies, 3);
+                return _chunk(this.favs, 3);
             }
+        },
+        methods: {
+          getFavs() {
+              axios.get('auth/favs').then( (response) => {
+                  this.favs = response.data;
+                  //probably we can save some requests if there are no new favs.
+                  window.favs = favs;
+              });
+          }
         },
         name: "myfavs"
     }

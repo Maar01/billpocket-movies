@@ -3254,7 +3254,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     groupedMovies: function groupedMovies() {
-      return _chunk(this.movies, 3);
+      return _chunk(this.favs, 3);
+    }
+  },
+  methods: {
+    getFavs: function getFavs() {
+      var _this = this;
+
+      axios.get('auth/favs').then(function (response) {
+        _this.favs = response.data; //probably we can save some requests if there are no new favs.
+
+        window.favs = favs;
+      });
     }
   },
   name: "myfavs"

@@ -10,7 +10,7 @@ class Movie extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'mdb_id', 'original_title', 'poster_path',
+        'mdb_id', 'original_title', 'poster_path', 'overview'
     ];
     //
 }

@@ -42,7 +42,10 @@ class FavouriteController extends Controller
         $movieData = $request->all();
 
         $movie = Movie::updateOrCreate(
-            [ 'mdb_id' => $movieData['id'], 'original_title' => $movieData['original_title'] ],
+            [ //values by look for:
+                'mdb_id' => $movieData['id'], 'original_title' => $movieData['original_title'],
+                'overview' => $movieData['overview']
+            ],//possible values that can change and need to be update.
             [ 'poster_path' => $movieData['poster_path'] ]
         );
         $newFav = new Favourite();
